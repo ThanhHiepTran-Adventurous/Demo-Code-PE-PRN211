@@ -1,0 +1,15 @@
+C:\Users\Acer\OneDrive\Máy tính\PRN1621-CodeDemo\PRN211PE_SU22_TranThanhHiep\PRN211PE_SU22_TranThanhHiep.Repo\bin\Debug\net5.0\PRN211PE_SU22_TranThanhHiep.Repo.deps.json
+C:\Users\Acer\OneDrive\Máy tính\PRN1621-CodeDemo\PRN211PE_SU22_TranThanhHiep\PRN211PE_SU22_TranThanhHiep.Repo\bin\Debug\net5.0\PRN211PE_SU22_TranThanhHiep.Repo.runtimeconfig.json
+C:\Users\Acer\OneDrive\Máy tính\PRN1621-CodeDemo\PRN211PE_SU22_TranThanhHiep\PRN211PE_SU22_TranThanhHiep.Repo\bin\Debug\net5.0\PRN211PE_SU22_TranThanhHiep.Repo.runtimeconfig.dev.json
+C:\Users\Acer\OneDrive\Máy tính\PRN1621-CodeDemo\PRN211PE_SU22_TranThanhHiep\PRN211PE_SU22_TranThanhHiep.Repo\bin\Debug\net5.0\PRN211PE_SU22_TranThanhHiep.Repo.dll
+C:\Users\Acer\OneDrive\Máy tính\PRN1621-CodeDemo\PRN211PE_SU22_TranThanhHiep\PRN211PE_SU22_TranThanhHiep.Repo\bin\Debug\net5.0\PRN211PE_SU22_TranThanhHiep.Repo.pdb
+C:\Users\Acer\OneDrive\Máy tính\PRN1621-CodeDemo\PRN211PE_SU22_TranThanhHiep\PRN211PE_SU22_TranThanhHiep.Repo\obj\Debug\net5.0\PRN211PE_SU22_TranThanhHiep.Repo.csproj.AssemblyReference.cache
+C:\Users\Acer\OneDrive\Máy tính\PRN1621-CodeDemo\PRN211PE_SU22_TranThanhHiep\PRN211PE_SU22_TranThanhHiep.Repo\obj\Debug\net5.0\PRN211PE_SU22_TranThanhHiep.Repo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Acer\OneDrive\Máy tính\PRN1621-CodeDemo\PRN211PE_SU22_TranThanhHiep\PRN211PE_SU22_TranThanhHiep.Repo\obj\Debug\net5.0\PRN211PE_SU22_TranThanhHiep.Repo.AssemblyInfoInputs.cache
+C:\Users\Acer\OneDrive\Máy tính\PRN1621-CodeDemo\PRN211PE_SU22_TranThanhHiep\PRN211PE_SU22_TranThanhHiep.Repo\obj\Debug\net5.0\PRN211PE_SU22_TranThanhHiep.Repo.AssemblyInfo.cs
+C:\Users\Acer\OneDrive\Máy tính\PRN1621-CodeDemo\PRN211PE_SU22_TranThanhHiep\PRN211PE_SU22_TranThanhHiep.Repo\obj\Debug\net5.0\PRN211PE_SU22_TranThanhHiep.Repo.csproj.CoreCompileInputs.cache
+C:\Users\Acer\OneDrive\Máy tính\PRN1621-CodeDemo\PRN211PE_SU22_TranThanhHiep\PRN211PE_SU22_TranThanhHiep.Repo\obj\Debug\net5.0\PRN211PE_SU22_TranThanhHiep.Repo.dll
+C:\Users\Acer\OneDrive\Máy tính\PRN1621-CodeDemo\PRN211PE_SU22_TranThanhHiep\PRN211PE_SU22_TranThanhHiep.Repo\obj\Debug\net5.0\refint\PRN211PE_SU22_TranThanhHiep.Repo.dll
+C:\Users\Acer\OneDrive\Máy tính\PRN1621-CodeDemo\PRN211PE_SU22_TranThanhHiep\PRN211PE_SU22_TranThanhHiep.Repo\obj\Debug\net5.0\PRN211PE_SU22_TranThanhHiep.Repo.pdb
+C:\Users\Acer\OneDrive\Máy tính\PRN1621-CodeDemo\PRN211PE_SU22_TranThanhHiep\PRN211PE_SU22_TranThanhHiep.Repo\obj\Debug\net5.0\PRN211PE_SU22_TranThanhHiep.Repo.genruntimeconfig.cache
+C:\Users\Acer\OneDrive\Máy tính\PRN1621-CodeDemo\PRN211PE_SU22_TranThanhHiep\PRN211PE_SU22_TranThanhHiep.Repo\obj\Debug\net5.0\ref\PRN211PE_SU22_TranThanhHiep.Repo.dll
