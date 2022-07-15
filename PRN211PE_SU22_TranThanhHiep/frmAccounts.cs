@@ -13,64 +13,133 @@ namespace PRN211PE_SU22_TranThanhHiep
 {
     public partial class frmAccounts : Form
     {
-        private ICustomerAccountRepo _customerAccountRepo;
-        CustomerAccount acccountCustomer = new CustomerAccount();
+        ICustomerAccountRepo _customerAccountRepo = new CustomerAccountRepo();
         BindingSource source;
 
 
         public frmAccounts()
         {
-            this._customerAccountRepo = new CustomerAccountRepo();
+           
             InitializeComponent();
         }
-
-
-        private void LoadAccountList()
-        {
-            //goi len DB
-            var data = this._customerAccountRepo.GetAll();
-            source = new BindingSource();
-            source.DataSource = data;
-            //var a = from customer in data
-            //        select new
-            //        {
-            //            customer.AccountName
-            //        };
-
-            //   source.DataSource = a.ToList();
-
-            //Load lên thoong qua data source
-            dgvListAccount.DataSource = null;
-            dgvListAccount.DataSource = source;
-           
-            this.dgvListAccount.Columns["Customer"].Visible = false;
-            this.dgvListAccount.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-        }
-
         private void frmAccounts_Load(object sender, EventArgs e)
-        {               
-                btnDelete.Enabled = false;        
-                dgvListAccount.CellDoubleClick += DgvMemberList_CellDoubleClick;         
-            
+        {
+            btnDelete.Enabled = false;
+           // LoadAccountList();
+            dgvListAccount.CellDoubleClick += DgvMemberList_CellDoubleClick;
+
         }
 
         private void DgvMemberList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            frmAccountsDetails frm = new frmAccountsDetails();
-            if(dgvListAccount.SelectedRows.Count > 0)
+            frmAccountsDetails frm = new frmAccountsDetails
             {
-                var Customer = new CustomerAccount()
-                {
-                    AccountId = (string)dgvListAccount.SelectedRows[0].Cells[0].Value,
-                    AccountName = (string)dgvListAccount.SelectedRows[0].Cells[1].Value,
-                    OpenDate = (DateTime)dgvListAccount.SelectedRows[0].Cells[2].Value,
-                    RegionName = (string)dgvListAccount.SelectedRows[0].Cells[3].Value,
-                    CustomerId = (string)dgvListAccount.SelectedRows[0].Cells[4].Value
-                };
-                frm.Load(Customer);
+                Text = "Update Customer Accounts",
+                InsertOrUpdate = true,
+                customerAccountInfo = GetCustomerAccountObject(),
+                _customerAccountRepo = _customerAccountRepo
+            };
+            if(frm.ShowDialog() == DialogResult.OK)
+            {
+                LoadAccountList();
+                source.Position = source.Position - 1;
             }
-            frm.ShowDialog();
             LoadAccountList();
+            
+        }
+        private void btnNew_Click(object sender, EventArgs e)
+        {
+            frmAccountsDetails frmAccountsDetails = new frmAccountsDetails
+            {
+                Text = "Add a new Customer Accounts",
+                InsertOrUpdate = false,
+                _customerAccountRepo = _customerAccountRepo
+            };
+            if( frmAccountsDetails.ShowDialog() == DialogResult.OK)
+            {
+                LoadAccountList();
+                source.Position = source.Count - 1;
+            }
+            LoadAccountList();
+        }
+
+        private CustomerAccount GetCustomerAccountObject()
+        {
+            CustomerAccount customerAccount = null;
+            try
+            {
+                customerAccount = new CustomerAccount
+                {
+                    AccountId = txtAccountId.Text,
+                    AccountName = txtAccountName.Text,
+                    OpenDate = DateTime.Parse(txtOpenDate.Text),
+                    RegionName = txtRegionName.Text,
+                    CustomerId = txtCustomerId.Text
+                };
+
+
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Get Customer Accounts");
+            }
+            return customerAccount;
+        }
+
+        private void LoadAccountList()
+        {
+            //goi len DB
+            var customerAccounts = this._customerAccountRepo.GetAll();
+            try
+            {
+                BindingSource source = new BindingSource();
+                source.DataSource = customerAccounts;
+
+                txtAccountId.DataBindings.Clear();
+                txtAccountName.DataBindings.Clear();
+                txtOpenDate.DataBindings.Clear();
+                txtRegionName.DataBindings.Clear();
+                txtCustomerId.DataBindings.Clear();
+
+
+
+                txtAccountId.DataBindings.Add("Text", source, "AccountID");
+                txtAccountName.DataBindings.Add("Text", source, "AccountName");
+                txtOpenDate.DataBindings.Add("Text", source, "OpenDate");
+                txtRegionName.DataBindings.Add("Text", source, "RegionName");
+                txtCustomerId.DataBindings.Add("Text", source, "CustomerID");
+
+                dgvListAccount.DataSource = null;
+                dgvListAccount.DataSource = source;
+
+
+                this.dgvListAccount.Columns["Customer"].Visible = false;
+                this.dgvListAccount.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+                if (customerAccounts.Count() == 0)
+                {
+                    ClearTextOrder();
+                    btnDelete.Enabled = false;
+                }
+                else
+                {
+                    btnDelete.Enabled = true;
+                }
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Load CustomerAccounts List");
+            }
+
+            
+        }
+
+        private void ClearTextOrder()
+        {
+            txtAccountId.Text = string.Empty;
+            txtAccountName.Text = string.Empty;
+            txtOpenDate.Text = string.Empty;
+            txtRegionName.Text = string.Empty;
+            txtCustomerId.Text = string.Empty;
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -87,24 +156,9 @@ namespace PRN211PE_SU22_TranThanhHiep
 
         private void btnLoad_Click(object sender, EventArgs e)
         {
-            btnDelete.Enabled = true;
-            var data = this._customerAccountRepo.GetAll();
-            source = new BindingSource();
-            source.DataSource = data;
-            //var a = from customer in data
-            //        select new
-            //        {
-            //            customer.AccountName
-            //        };
-
-            //   source.DataSource = a.ToList();
-
-            //Load lên thoong qua data source
-            dgvListAccount.DataSource = null;
-            dgvListAccount.DataSource = source;
-            dgvListAccount.CellDoubleClick += DgvMemberList_CellDoubleClick;
-            this.dgvListAccount.Columns["Customer"].Visible = false;
-            this.dgvListAccount.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            LoadAccountList();
         }
+
+       
     }
 }

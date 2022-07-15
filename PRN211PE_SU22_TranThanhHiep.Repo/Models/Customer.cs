@@ -17,5 +17,11 @@ namespace PRN211PE_SU22_TranThanhHiep.Repo.Models
         public string CustomerDesc { get; set; }
 
         public virtual ICollection<CustomerAccount> CustomerAccounts { get; set; }
+
+
+        public override string ToString()
+        {
+            return CustomerId;
+        }
     }
 }

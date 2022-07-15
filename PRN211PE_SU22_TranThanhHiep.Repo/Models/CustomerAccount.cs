@@ -14,5 +14,8 @@ namespace PRN211PE_SU22_TranThanhHiep.Repo.Models
         public string CustomerId { get; set; }
 
         public virtual Customer Customer { get; set; }
+
+
+      
     }
 }

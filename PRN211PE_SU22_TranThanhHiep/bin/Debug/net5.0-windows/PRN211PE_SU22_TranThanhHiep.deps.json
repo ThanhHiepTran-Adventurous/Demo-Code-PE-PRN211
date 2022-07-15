@@ -1041,7 +1041,8 @@
       },
       "PRN211PE_SU22_TranThanhHiep.Repo/1.0.0": {
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.17"
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.17",
+          "Microsoft.Extensions.Configuration.Json": "5.0.0"
         },
         "runtime": {
           "PRN211PE_SU22_TranThanhHiep.Repo.dll": {}

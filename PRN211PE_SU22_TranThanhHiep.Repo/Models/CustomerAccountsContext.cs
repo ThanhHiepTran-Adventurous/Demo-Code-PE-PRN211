@@ -23,6 +23,7 @@ namespace PRN211PE_SU22_TranThanhHiep.Repo.Models
         public CustomerAccountsContext(DbContextOptions<CustomerAccountsContext> options)
             : base(options)
         {
+            
         }
 
         public virtual DbSet<Customer> Customers { get; set; }
@@ -33,6 +34,7 @@ namespace PRN211PE_SU22_TranThanhHiep.Repo.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
+                optionsBuilder.EnableSensitiveDataLogging();
                //optionsBuilder.UseSqlServer();
                 //nên để im ccasi này khoogn được đụng tới, nó sẽ ưu tiên lấy cái thằng bên lớp CustomerAccountsDB trước
                 optionsBuilder.UseSqlServer(" Server=(local);uid=sa;pwd=1;database=CustomerAccounts;TrustServerCertificate=True ");

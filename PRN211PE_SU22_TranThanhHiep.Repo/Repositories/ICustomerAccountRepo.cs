@@ -17,5 +17,8 @@ namespace PRN211PE_SU22_TranThanhHiep.Repo.Repositories
 
         void DeleteAccount(string accountId);
 
+
+        public IEnumerable<Customer> GetCustomers();
+
     }
 }
